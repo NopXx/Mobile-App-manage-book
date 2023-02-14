@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import TaskList from "../components/TaskList";
+import BookList from "../components/BookList";
 import Layout from "../components/Layout";
 
 const HomeScreen = () => {
@@ -8,7 +8,7 @@ const HomeScreen = () => {
 
   return (
     <Layout>
-      <TaskList />
+      <BookList />
     </Layout>
   );
 };
