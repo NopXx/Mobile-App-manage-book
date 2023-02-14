@@ -1,33 +1,19 @@
-const API = "http://10.0.2.2:3000/tasks";
+const API = "https://cfd6-223-24-171-158.ap.ngrok.io/api";
 
-export const getTasks = async () => {
-  const res = await fetch(API);
+export const getBooks = async () => {
+  const res = await fetch(`${API}/books`);
   return await res.json();
 };
 
-export const getTask = async (id) => {
-  const res = await fetch(`${API}/${id}`);
+export const getBookSearchAll = async (value) => {
+  const res = await fetch(`${API}/books/search?value=${value}`);
   return await res.json();
 };
 
-export const saveTask = async (newTask) => {
-  const res = await fetch(API, {
-    method: "POST",
-    headers: { Accept: "application/json", "Content-Type": "application/json" },
-    body: JSON.stringify(newTask),
-  });
+export const getBookSearch = async (table, value) => {
+  const res = await fetch(`${API}/book?table=${table}&value=${value}`);
   return await res.json();
 };
 
-export const deleteTask = async (id) => {
-  await fetch(`${API}/${id}`, { method: "DELETE" });
-};
 
-export const updateTask = async (id, task) => {
-  const res = await fetch(`${API}/${id}`, {
-    method: "PUT",
-    headers: { Accept: "application/json", "Content-Type": "application/json" },
-    body: JSON.stringify(task),
-  });
-  return res;
-};
+
