@@ -20,18 +20,10 @@ function App() {
           name="HomeScreen"
           component={HomeScreen}
           options={({ navigation }) => ({
-            title: "Task - App",
+            title: "ห้องสมุด",
             headerStyle: { backgroundColor: "#222f3e" },
+            headerTitleAlign: 'center',
             headerTitleStyle: { color: "#fff" },
-            headerRight: () => (
-              <TouchableOpacity
-                onPress={() => navigation.navigate("TaskFormScreen")}
-              >
-                <Text style={{ color: "white", marginRight: 20, fontSize: 15 }}>
-                  New
-                </Text>
-              </TouchableOpacity>
-            ),
           })}
         />
         <Stack.Screen
